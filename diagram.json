@@ -1,0 +1,51 @@
+{
+  "version": 1,
+  "author": "Janitha Dambagalla",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-arduino-uno", "id": "uno", "top": 0.6, "left": 95.4, "attrs": {} },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn1",
+      "top": -118.6,
+      "left": 384,
+      "attrs": { "color": "red", "bounce": "0" }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn2",
+      "top": -118.6,
+      "left": 288,
+      "attrs": { "color": "blue" }
+    },
+    {
+      "type": "wokwi-photoresistor-sensor",
+      "id": "ldr1",
+      "top": 268.5,
+      "left": 23.3,
+      "rotate": 90,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-photoresistor-sensor",
+      "id": "ldr2",
+      "top": 268.5,
+      "left": 119.3,
+      "rotate": 90,
+      "attrs": {}
+    }
+  ],
+  "connections": [
+    [ "btn1:2.l", "uno:2", "red", [ "h-9.6", "v38.6", "h19.2" ] ],
+    [ "btn2:2.l", "uno:3", "blue", [ "h-28.8", "v29", "h0" ] ],
+    [ "btn2:1.l", "uno:GND.1", "green", [ "h-76.8" ] ],
+    [ "btn1:1.l", "btn2:1.l", "green", [ "h-9.6", "v-57.6", "h-86.4" ] ],
+    [ "ldr1:VCC", "ldr2:VCC", "red", [ "v19.2", "h96" ] ],
+    [ "ldr2:VCC", "uno:5V", "red", [ "v19.2", "h38.4" ] ],
+    [ "ldr1:GND", "ldr2:GND", "black", [ "v38.4", "h96.4" ] ],
+    [ "ldr2:GND", "uno:GND.2", "black", [ "v38.4", "h58" ] ],
+    [ "ldr1:AO", "uno:A0", "green", [ "v67.2", "h0.7" ] ],
+    [ "ldr2:AO", "uno:A1", "green", [ "v48", "h125.5" ] ]
+  ],
+  "dependencies": {}
+}
